@@ -1,0 +1,2 @@
+add_executable(1_finite_field main.cpp)
+target_link_libraries(1_finite_field PRIVATE 1_finite_field_lib)

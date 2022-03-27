@@ -1,0 +1,12 @@
+# ninja log v5
+0	12	1648381698652303050	app/CMakeFiles/1_finite_field.dir/main.cpp.o	ddf228e55caff4d
+0	157	1648381698802303050	lib/CMakeFiles/1_finite_field_lib.dir/FiniteField.cpp.o	b9333f3b1e16f2b4
+157	167	1648381698812303050	lib/lib1_finite_field_lib.a	8a4867641d24286c
+167	254	1648381698892303050	app/1_finite_field	26b3441b3ffa8c4f
+0	150	1648384747712303839	build.ninja	7f0ecb8374e0d31
+1	35	1648384747752303839	lib/CMakeFiles/1_finite_field_lib.dir/FieldElement.cpp.o	e9ead27f2048e194
+1	35	1648384747752303839	lib/CMakeFiles/1_finite_field_lib.dir/Polynom.cpp.o	e30d34b5dd3f673
+0	16	1648384768212303844	app/CMakeFiles/1_finite_field.dir/main.cpp.o	ddf228e55caff4d
+0	162	1648384773482303845	lib/CMakeFiles/1_finite_field_lib.dir/FiniteField.cpp.o	b9333f3b1e16f2b4
+162	172	1648384773492303845	lib/lib1_finite_field_lib.a	e9e3e7ba27527bb3
+172	249	1648384773572303845	app/1_finite_field	26b3441b3ffa8c4f
