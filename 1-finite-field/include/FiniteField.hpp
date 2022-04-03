@@ -36,8 +36,9 @@ public:
   }
 
   const ElementType &getPrimitiveElement(bool Print = false,
-                                         bool Verbose = false) {
-    calculatePrimitiveElement(Print, Verbose);
+                                         bool Verbose = false,
+                                         bool AllDegs = false) {
+    calculatePrimitiveElement(Print, Verbose, AllDegs);
     return Primitive;
   }
 
@@ -83,7 +84,7 @@ private:
 
   friend struct ElementGenerator;
 
-  void calculatePrimitiveElement(bool Print, bool Verbose) {
+  void calculatePrimitiveElement(bool Print, bool Verbose, bool AllDegs) {
     ElementGenerator Gen(this);
     bool FoundPrim = false;
     while (!Gen.HitZero && !FoundPrim) {
@@ -93,7 +94,7 @@ private:
       ElementType Pow(&PField);
       std::size_t I;
       for (I = 0; I < PM; I++) {
-        if (I == 0 || (std::size_t(PM) - 1) % I != 0)
+        if (!AllDegs && (I == 0 || (std::size_t(PM) - 1) % I != 0))
           continue;
         Pow = Poly.pow(I);
         Rem.clear();

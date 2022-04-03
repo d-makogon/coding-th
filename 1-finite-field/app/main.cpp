@@ -43,6 +43,7 @@ int main(int argc, char const *argv[]) {
   std::size_t P, M;
   std::vector<std::uint64_t> PolyCoeffs;
   bool Verbose = false;
+  bool AllDegs = false;
 
   if (argc > 1) {
     if (!ParseInt(argv[1], P)) {
@@ -74,6 +75,13 @@ int main(int argc, char const *argv[]) {
       return 1;
     }
     HasVerbose = true;
+  }
+
+  if (argc > 5) {
+    if (!ParseInt(argv[5], AllDegs)) {
+      std::cerr << "Error reading 'all degress' from " << argv[5] << "\n";
+      return 1;
+    }
   }
 
   while (!HasP) {
@@ -131,7 +139,7 @@ int main(int argc, char const *argv[]) {
   F.setIrredPoly(IrredPoly);
 
   auto t1 = high_resolution_clock::now();
-  auto Pr = F.getPrimitiveElement(Verbose, Verbose);
+  auto Pr = F.getPrimitiveElement(Verbose, Verbose, AllDegs);
   auto t2 = high_resolution_clock::now();
   std::cout << "Primitive element is ";
   if (Verbose)
@@ -139,7 +147,7 @@ int main(int argc, char const *argv[]) {
   else
     Pr.printVector(std::cout, M);
   duration<double, std::milli> ms_double = t2 - t1;
-  std::cout << ms_double.count() << "ms\n";
+  std::cout << "Time taken: " << ms_double.count() << "ms\n";
 
   // +, *, / examples:
   // FieldT Field(3);
