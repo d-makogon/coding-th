@@ -25,14 +25,14 @@ template <class FieldT> struct Monom {
   }
 
   Monom sum(const Monom &Other) const {
-    assert(Degree == Other.Degree || Coeff == Field.zero() ||
-           Other.Coeff == Field.zero() && "Monoms degrees must match");
+    assert(Degree == Other.Degree || Coeff == Field->zero() ||
+           Other.Coeff == Field->zero() && "Monoms degrees must match");
     return Monom(Coeff + Other.Coeff, Degree);
   }
 
   Monom &sumInPlace(const Monom &Other) {
-    assert(Degree == Other.Degree || Coeff == Field.zero() ||
-           Other.Coeff == Field.zero() && "Monoms degrees must match");
+    assert(Degree == Other.Degree || Coeff == Field->zero() ||
+           Other.Coeff == Field->zero() && "Monoms degrees must match");
     Coeff += Other.Coeff;
     return *this;
   }
