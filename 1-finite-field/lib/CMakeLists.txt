@@ -1,12 +1,11 @@
 set(HEADERS_LIST
     ../include/FiniteField.hpp
-    ../include/FieldElement.hpp
     ../include/Polynom.hpp
+    ../include/PrimeField.hpp
 )
 
 add_library(1_finite_field_lib STATIC
   FiniteField.cpp
-  FieldElement.cpp
   Polynom.cpp
   ${HEADERS_LIST}
 )
