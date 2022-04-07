@@ -118,7 +118,7 @@ private:
           std::cout << "P is primitive!\n";
       }
       if (Print)
-        std::cout << "----------------\n";
+        std::cout << "\n";
     }
   }
 };

@@ -131,7 +131,7 @@ int main(int argc, char const *argv[]) {
   for (auto C : PolyCoeffs)
     IrredCoeffs.emplace_back(C, PF);
   FiniteField::ElementType IrredPoly(PF, IrredCoeffs);
-  std::cout << "Irreducible polynom is ";
+  // std::cout << "Irreducible polynom is ";
   if (Verbose)
     IrredPoly.print(std::cout);
   else
@@ -147,7 +147,7 @@ int main(int argc, char const *argv[]) {
   else
     Pr.printVector(std::cout, M);
   duration<double, std::milli> ms_double = t2 - t1;
-  std::cout << "Time taken: " << ms_double.count() << "ms\n";
+  std::cout << "Time Elapsed: " << ms_double.count() << "ms\n";
 
   // +, *, / examples:
   // FieldT Field(3);
